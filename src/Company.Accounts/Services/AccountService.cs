@@ -13,12 +13,12 @@ namespace Company.Accounts.Api.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task CreateAccount(Guid customerId, decimal transactionValue)
+        public async Task CreateAccount(Guid customerId, decimal initialCredit)
         {
             var transactions = new List<Transaction>();
-            if (transactionValue != 0)
+            if (initialCredit != 0)
             {
-                transactions.Add(new Transaction() { Value = transactionValue });
+                transactions.Add(new Transaction() { Value = initialCredit });
             }
 
             await _unitOfWork.Accounts.AddAsync(

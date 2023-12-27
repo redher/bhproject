@@ -10,6 +10,6 @@ namespace Company.Core.Services
     public interface IAccountService
     {
         Task<Account?> GetAccountByCustomerId(Guid customerId);
-        Task CreateAccount(Guid customerId, decimal transactionValue);
+        Task CreateAccount(Guid customerId, decimal initialCredit);
     }
 }

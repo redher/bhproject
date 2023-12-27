@@ -16,11 +16,11 @@ namespace Company.Accounts.Api.Controllers
         }
 
         [HttpPost("")]
-        public async Task<ActionResult> CreateAccount([FromQuery] Guid customerId, [FromQuery] decimal transactionValue)
+        public async Task<ActionResult> CreateAccount([FromQuery] Guid customerId, [FromQuery] decimal initialCredit)
         {
             try
             {
-                await _accountService.CreateAccount(customerId, transactionValue);
+                await _accountService.CreateAccount(customerId, initialCredit);
                 return Ok();
             }
             catch
