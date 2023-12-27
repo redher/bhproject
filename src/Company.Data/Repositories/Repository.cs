@@ -37,7 +37,7 @@ namespace Company.Data.Repositories
             return await Context.Set<TEntity>().ToListAsync();
         }
 
-        public ValueTask<TEntity> GetByIdAsync(int id)
+        public ValueTask<TEntity?> GetByIdAsync(int id)
         {
             return Context.Set<TEntity>().FindAsync(id);
         }
@@ -52,7 +52,7 @@ namespace Company.Data.Repositories
             Context.Set<TEntity>().RemoveRange(entities);
         }
 
-        public Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)
+        public Task<TEntity?> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)
         {
             return Context.Set<TEntity>().SingleOrDefaultAsync(predicate);
         }

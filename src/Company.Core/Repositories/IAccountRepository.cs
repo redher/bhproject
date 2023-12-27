@@ -9,5 +9,6 @@ namespace Company.Core.Repositories
 {
     public interface IAccountRepository : IRepository<Account>
     {
+        public Task<Account?> GetAccountByCustomerIdWithTransactionsAsync(Guid customerId);
     }
 }

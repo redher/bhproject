@@ -9,9 +9,7 @@ namespace Company.Core.Services
 {
     public interface IAccountService
     {
-        Task<IEnumerable<Account>> GetAll();
-        Task<Account> GetAccountByCustomerId(Guid customerId);
-        Task<Account> CreateAccount(Guid customerId, decimal transactionValue);
-        Task UpdateAccount(Account accountToBeUpdated, Account account);
+        Task<Account?> GetAccountByCustomerId(Guid customerId);
+        Task CreateAccount(Guid customerId, decimal transactionValue);
     }
 }
