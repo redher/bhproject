@@ -1,4 +1,4 @@
-﻿using BlueHarvest.Core.Models;
+﻿using Company.Core.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -15,6 +15,7 @@ namespace Company.Data.Configurations
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.CustomerId).IsRequired();
+            builder.HasOne(x => x.Customer).WithMany(x => x.Accounts).HasForeignKey(x => x.CustomerId);
             builder.ToTable("Accounts");
         }
     }

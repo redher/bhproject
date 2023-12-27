@@ -14,7 +14,7 @@ namespace Company.Data.Configurations
         public void Configure(EntityTypeBuilder<Transaction> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.HasOne(x => x.Account).WithMany(x=>x.Transactions).HasForeignKey(x=>x.Id);
+            builder.HasOne(x => x.Account).WithMany(x=>x.Transactions).HasForeignKey(x=>x.AccountId);
             builder.Property(x => x.Value).IsRequired();
             builder.ToTable("Transactions");
         }

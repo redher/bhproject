@@ -1,4 +1,4 @@
-﻿using BlueHarvest.Core.Models;
+﻿using Company.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

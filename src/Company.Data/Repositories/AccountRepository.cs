@@ -1,4 +1,4 @@
-﻿using BlueHarvest.Core.Models;
+﻿using Company.Core.Models;
 using Company.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,7 +20,7 @@ namespace Company.Data.Repositories
                 .FirstOrDefaultAsync(x => x.CustomerId.Equals(customerId));
         }
 
-        private AccountDbContext AccountDbContext { get { return Context as AccountDbContext; } }
+        private AccountDbContext AccountDbContext { get { return (AccountDbContext)Context; } }
 
     }
 }

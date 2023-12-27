@@ -1,6 +1,5 @@
-﻿using BlueHarvest.Core.Models;
+﻿using Company.Core.Models;
 using Company.Core.Interfaces;
-using Company.Core.Models;
 using Company.Core.Services;
 
 namespace Company.Accounts.Api.Services
