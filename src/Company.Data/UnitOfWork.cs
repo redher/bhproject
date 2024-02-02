@@ -13,14 +13,18 @@ namespace Company.Data
     {
         private readonly AccountDbContext _context;
         private AccountRepository accountRepository;
+        private CustomerRepository customerRepository;
 
         public UnitOfWork(AccountDbContext context)
         {
-            this._context = context;
+            _context = context;
+            _context.Database.EnsureCreated();
             accountRepository = new AccountRepository(_context);
+            customerRepository = new CustomerRepository(_context);
         }
 
         public IAccountRepository Accounts => accountRepository;
+        public ICustomerRepository Customers => customerRepository;
 
         public async Task<int> CommitAsync()
         {

@@ -2,6 +2,7 @@ using Company.Accounts.Api.Services;
 using Company.Core.Interfaces;
 using Company.Core.Services;
 using Company.Data;
+using Company.Data.Repositories;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -34,6 +35,5 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
-
 
 app.Run();

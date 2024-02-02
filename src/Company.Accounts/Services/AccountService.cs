@@ -34,6 +34,5 @@ namespace Company.Accounts.Api.Services
         {
             return await _unitOfWork.Accounts.GetAccountByCustomerIdWithTransactionsAsync(customerId);
         }
-
     }
 }
